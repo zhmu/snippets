@@ -52,6 +52,7 @@ bool TCPServer::Start(int port_number)
 	if (pthread_create(&m_Thread, NULL, &ThreadWrapper, this) < 0)
 		return false;
 	
+	m_HaveThread = true;
 	return true;
 }
 
